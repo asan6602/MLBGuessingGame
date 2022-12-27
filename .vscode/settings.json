@@ -1,0 +1,8 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "C:\\Program Files\\Java\\junit-4.13.2.jar",
+        "c:\\Users\\ABSan\\OneDrive\\Desktop\\postgresql-42.5.1.jar",
+        "c:\\Users\\ABSan\\OneDrive\\Desktop\\ibatis-2.3.0.677.jar"
+    ]
+}
