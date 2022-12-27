@@ -96,11 +96,9 @@ public class db_Utils {
 
     }
     public static void main(String[] args) {
-        exec_sql_file("C:/Users/ABSan/OneDrive/Desktop/MLBGuessingGame/src/Awards.sql");
-        String sql = "INSERT INTO Awards (playerID, yearID, Award) VALUES ('bob123', '2010', 'CY Young')";
-        exec_commit(sql);
         String get = "SELECT * FROM batting LIMIT 10";
-        System.out.println(exec_get_all(get));
+        ArrayList<ArrayList<String>> g = exec_get_all(get);
+        System.out.println(g.get(0));
         
     }
 }
