@@ -3,6 +3,8 @@
         "lib/**/*.jar",
         "C:\\Program Files\\Java\\junit-4.13.2.jar",
         "c:\\Users\\ABSan\\OneDrive\\Desktop\\postgresql-42.5.1.jar",
-        "c:\\Users\\ABSan\\OneDrive\\Desktop\\ibatis-2.3.0.677.jar"
+        "c:\\Users\\ABSan\\OneDrive\\Desktop\\ibatis-2.3.0.677.jar",
+        "c:\\Program Files\\Java\\opencsv-5.7.0.jar",
+        "c:\\Program Files\\Java\\commons-lang3-3.12.0\\commons-lang3-3.12.0.jar"
     ]
 }

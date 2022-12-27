@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Set;
 
 import com.ibatis.common.jdbc.ScriptRunner;
 
@@ -64,6 +65,8 @@ public class db_Utils {
                 result.add(data);
                 
             }
+            rs.close();
+            statement.close();
             conn.close();
             return result;
 
@@ -83,9 +86,11 @@ public class db_Utils {
             Connection conn = connect();
             Statement statement = conn.createStatement();
             statement.executeUpdate(sql);
+            statement.close();
             conn.close();
 
         } catch (Exception e) {
+            System.out.println(e);
             // TODO: handle exception
         }
 
