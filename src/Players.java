@@ -30,11 +30,18 @@ public class Players {
                 }
                 create_player(id, debut, first, last);
             }
+            csvReader.close();
+            fr.close();
             
         } catch (Exception e) {
             System.out.println(e);
             // TODO: handle exception
         }   
+    }
+    public static void main(String[] args) {
+        Players p = new Players();
+        p.build_table();
+        p.players_csv_reader();
     }
 
 }
