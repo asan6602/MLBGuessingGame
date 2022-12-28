@@ -1,3 +1,4 @@
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -45,7 +46,7 @@ public class Game {
                     playing = false;
                 }
                 else {
-                    System.out.println("You Guessed Wrong!");
+                    System.out.println("You Guessed Wrong!");   
                 }
             }
             else {
@@ -122,8 +123,10 @@ public class Game {
         return name;
     }
 
+
     public static void main(String[] args) {
         Game g = new Game();
+        g.changeSetting(new _2010s());
         g.play();
     }
 }

@@ -1,11 +1,10 @@
 import java.util.ArrayList;
 
-public class Hof implements Setting {
+public class _1960s implements Setting {
     @Override
     public ArrayList<ArrayList<String>> getPlayer() {
-        String sql = "SELECT * FROM Hof ORDER BY RANDOM() LIMIT 1";
+        String sql = "SELECT * FROM players WHERE players.debut > '1960-01-01' AND players.debut < '1969-12-31' ORDER BY RANDOM() LIMIT 1";
         ArrayList<ArrayList<String>> result = db_Utils.exec_get_all(sql);
         return result;
-    
     }
 }
