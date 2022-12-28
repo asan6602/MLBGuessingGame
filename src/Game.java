@@ -2,6 +2,7 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 public class Game {
     Setting gameSetting;
 
@@ -35,6 +36,8 @@ public class Game {
         boolean playing = true;
         while(playing) {
             Scanner scan = new Scanner(System.in);
+            long start = System.nanoTime() /1000000000;
+
             System.out.print("Enter firstname: ");
             String firstname = scan.nextLine().toLowerCase();
             System.out.print("Enter lastname: ");
@@ -42,7 +45,9 @@ public class Game {
 
             if(firstname.equals(firstname1)) {
                 if(lastname.equals(lastname1)) {
-                    System.out.println("You Got It!");
+                    long end = (System.nanoTime()/1000000000);
+                    long seconds = end - start;
+                    System.out.println("You Got It in " + seconds + " seconds");
                     playing = false;
                 }
                 else {
