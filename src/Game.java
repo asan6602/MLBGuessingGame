@@ -26,7 +26,8 @@ public class Game {
             }
             if(counter == 2) {
                 System.out.println("Pitching: ");
-                System.out.println("[Year, Team,   G, W, L, SV, SO, ERA, Outs]");
+                System.out.println("[Year, Team,   G,   W,   L,  SV,  SO,  ERA,  IP]");
+                printPitching(entry);
             }
             counter++;
         }
@@ -67,7 +68,7 @@ public class Game {
             int abs = 0;
             int hits = 0;
             System.out.print("[");
-                    int index= 0;
+            int index= 0;
                     for(String stat: entry2) {
                         if(index == 0) {
                             System.out.print(stat + ",");
@@ -115,7 +116,7 @@ public class Game {
                                 System.out.print(" " + stat + ", ");
                             }
                         }
-                        index += 1;
+                        index++;
                     }
                     printAverage(hits, abs);
                     System.out.println("]");
@@ -155,7 +156,57 @@ public class Game {
     }
 
     public void printPitching(ArrayList<ArrayList<String>> entry) {
-
+        for(ArrayList<String> entry2: entry) {
+            System.out.print("[");
+            int index= 0;
+                for(String stat: entry2) {
+                    if(index == 0) {
+                        System.out.print(stat + ",");
+                    }
+                    if(index == 1) {
+                        System.out.print("  "+ stat + ",");
+                    }
+                    if(index == 2) {
+                        statlength(stat);
+                    }
+                    if(index == 3) {
+                        statlength(stat);
+                    }
+                    if(index == 4) {
+                        statlength(stat);
+                    }
+                    if(index == 5) {
+                        statlength(stat);
+                    }
+                    if(index == 6) {
+                        statlength(stat);
+                    }
+                    if(index == 7) {
+                        if(stat.length() == 3) {
+                            System.out.print( " " + stat + "0,");
+                        }
+                        else {
+                            System.out.print( " " + stat + ",");
+                        }
+                    }
+                    if(index == 8) {
+                        int innings = Integer.parseInt(stat) / 3;
+                        String inningsSTR = Integer.toString(innings);
+                        if(inningsSTR.length() == 1) {
+                            System.out.print("   " + innings);
+                        }
+                        if(inningsSTR.length() == 2) {
+                            System.out.print("  " + innings);
+                        }
+                        if(inningsSTR.length() == 3) {
+                            System.out.print(" " + innings);
+                        }
+                    }
+                    
+                    index++;
+                }
+            System.out.println("]");
+        }
     }
 
     public void statlength(String stat) {
