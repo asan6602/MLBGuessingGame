@@ -182,6 +182,9 @@ public class Game {
                         statlength(stat);
                     }
                     if(index == 7) {
+                        if(stat.length() == 1) {
+                            System.out.print( " " + stat + ".00,");
+                        }
                         if(stat.length() == 3) {
                             System.out.print( " " + stat + "0,");
                         }
