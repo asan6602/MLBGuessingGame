@@ -15,10 +15,16 @@ public class Game {
         ArrayList<ArrayList<ArrayList<String>>> stats = getPlayerStats(player.get(0));
         System.out.println();
         int counter = 0;
+        String name = " ";
+        String hint = "";
+        int hintsUsed = 0;
         for(ArrayList<ArrayList<String>> entry: stats) {
             if(counter == 0) {
                 System.out.println("Name: ");
-                System.out.println(entry.get(0));
+                name = entry.get(0).get(0);
+                name +=  " " + entry.get(0).get(1);
+                hint = nameAsSpace(name);
+                System.out.println(hint);
             }
             if(counter == 1) {
                 System.out.println("Batting: ");
@@ -41,27 +47,85 @@ public class Game {
         while(playing) {
             Scanner scan = new Scanner(System.in);
 
-            System.out.print("Enter firstname: ");
-            String firstname = scan.nextLine().toLowerCase();
-            System.out.print("Enter lastname: ");
-            String lastname = scan.nextLine().toLowerCase();
+            System.out.println("<1> guess, <2> hint, <3> give up");
+            System.out.print("Enter: ");
+            String command = scan.nextLine().toLowerCase();
 
-            if(firstname.equals(firstname1)) {
-                if(lastname.equals(lastname1)) {
-                    long end = (System.nanoTime()/1000000000);
-                    long seconds = end - start;
-                    System.out.println("You Got It in " + seconds + " seconds");
-                    playing = false;
+            if(command.equals("1")) {
+                System.out.print("Enter firstname: ");
+                String firstname = scan.nextLine().toLowerCase();
+                System.out.print("Enter lastname: ");
+                String lastname = scan.nextLine().toLowerCase();
+
+                if(firstname.equals(firstname1)) {
+                    if(lastname.equals(lastname1)) {
+                        long end = (System.nanoTime()/1000000000);
+                        long seconds = end - start;
+                        System.out.println();
+                        System.out.println("CONGRATULATIONS!");
+                        System.out.println("The player is " + name + ".");
+                        System.out.println("You got it in " + seconds + " seconds.");
+                        System.out.println("You used " + hintsUsed + " hints.");
+                        playing = false;
+                    }
+                    else {
+                        System.out.println("You Guessed Wrong!");   
+                    }
                 }
                 else {
-                    System.out.println("You Guessed Wrong!");   
+                    System.out.println("You Guessed Wrong!");
                 }
             }
-            else {
-                System.out.println("You Guessed Wrong!");
+            else if(command.equals("2")) {
+                hint = hint(name, hint);
+                System.out.println(hint);
+                hintsUsed += 1;
+            }
+            else if(command.equals("3")) {
+                System.out.println("The player is " + name + ".");
+                playing = false;
+            }
+            else{
+                System.out.println("Not a valid command!");
             }
 
         }
+    }
+
+    public String nameAsSpace(String name) {
+        String hint = "";
+        for (int i = 0; i < name.length(); i++){
+            char c = name.charAt(i);
+            if(c == ' ') {
+                hint += " ";
+            }  
+            else {
+                hint += "_";
+            }      
+        }
+        return hint;
+    }
+
+    public String hint(String name, String hint) {
+        String newHint = "";
+        Boolean changed = false;
+        for (int i = 0; i < hint.length(); i++){
+            char c = hint.charAt(i);
+            if(c == '_' && changed == false) {
+                newHint += name.charAt(i);
+                changed = true;
+            }  
+            else if(c == ' ') {
+                newHint += " ";
+            }  
+            else if (c == '_'){
+                newHint += "_";
+            }
+            else {
+                newHint += name.charAt(i);
+            }       
+        }
+        return newHint;
     }
 
     public void printHitting(ArrayList<ArrayList<String>> entry) {
@@ -297,7 +361,7 @@ public class Game {
 
     public static void main(String[] args) {
         Game g = new Game();
-        g.changeSetting(new Hof());
+        g.changeSetting(new _2010s());
         g.play();
     }
 }
