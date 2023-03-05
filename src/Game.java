@@ -13,6 +13,7 @@ public class Game {
     public void play() {
         ArrayList<String> player = this.gameSetting.getPlayer().get(0);
         ArrayList<ArrayList<ArrayList<String>>> stats = getPlayerStats(player.get(0));
+        System.out.println();
         int counter = 0;
         for(ArrayList<ArrayList<String>> entry: stats) {
             if(counter == 0) {
@@ -36,9 +37,9 @@ public class Game {
         String lastname1 = stats.get(0).get(0).get(1).toLowerCase();
 
         boolean playing = true;
+        long start = System.nanoTime() /1000000000;
         while(playing) {
             Scanner scan = new Scanner(System.in);
-            long start = System.nanoTime() /1000000000;
 
             System.out.print("Enter firstname: ");
             String firstname = scan.nextLine().toLowerCase();
@@ -232,6 +233,7 @@ public class Game {
      * checks if the player has the relevant amount of games played
      */
     private boolean relevancyCheck(String playerID) {
+        System.out.print(".");
         String sql1 = String.format("SELECT SUM(h) FROM batting WHERE batting.playerID ='%s'", playerID);
         String sql2 = String.format("SELECT SUM(so) FROM pitching WHERE pitching.playerID ='%s'", playerID);
 
@@ -295,7 +297,7 @@ public class Game {
 
     public static void main(String[] args) {
         Game g = new Game();
-        g.changeSetting(new _2010s());
+        g.changeSetting(new Hof());
         g.play();
     }
 }
