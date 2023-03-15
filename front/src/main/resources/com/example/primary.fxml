@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.PrimaryController">
+   <children>
+      <TableView fx:id="bview" fixedCellSize="-100.0" prefHeight="510.0" prefWidth="467.0">
+         <columns>
+            <TableColumn fx:id="byear" prefWidth="42.0" text="Year" />
+            <TableColumn fx:id="bteam" minWidth="2.39996337890625" prefWidth="42.0" text="Team" />
+            <TableColumn fx:id="bg" prefWidth="37.0" text="G" />
+            <TableColumn fx:id="bab" prefWidth="37.0" text="AB" />
+            <TableColumn fx:id="br" prefWidth="37.0" text="R" />
+            <TableColumn fx:id="bh" prefWidth="37.0" text="H" />
+            <TableColumn fx:id="b2b" minWidth="0.0" prefWidth="37.0" text="2B" />
+            <TableColumn fx:id="b3b" prefWidth="37.0" text="3B" />
+            <TableColumn fx:id="bhr" prefWidth="37.0" text="HR" />
+            <TableColumn fx:id="brbi" prefWidth="37.0" text="RBI" />
+            <TableColumn fx:id="bbb" prefWidth="37.0" text="BB" />
+            <TableColumn fx:id="bsb" prefWidth="37.0" text="SB" />
+         </columns>
+      </TableView>
+      <TableView fx:id="pview" layoutX="530.0" prefHeight="510.0" prefWidth="467.0">
+        <columns>
+          <TableColumn fx:id="pteam" prefWidth="50.0" text="Team" />
+          <TableColumn fx:id="pyear" prefWidth="50.0" text="Year" />
+            <TableColumn fx:id="pg" prefWidth="50.0" text="G" />
+            <TableColumn fx:id="pw" prefWidth="50.0" text="W" />
+            <TableColumn fx:id="pl" prefWidth="50.0" text="L" />
+            <TableColumn fx:id="psv" prefWidth="50.0" text="SV" />
+            <TableColumn fx:id="pso" prefWidth="50.0" text="SO" />
+            <TableColumn fx:id="pera" prefWidth="55.0" text="ERA" />
+            <TableColumn fx:id="pip" prefWidth="50.0" text="IP" />
+        </columns>
+      </TableView>
+      <Button fx:id="Play" layoutX="480.0" layoutY="466.0" mnemonicParsing="false" onAction="#play" text="Play" />
+      <Button fx:id="enterButton" layoutX="590.0" layoutY="537.0" mnemonicParsing="false" onAction="#enter" text="Enter" />
+      <TextField fx:id="enterText" layoutX="425.0" layoutY="537.0" promptText="enter a name" />
+      <Label fx:id="resultLabel" alignment="CENTER" layoutX="439.0" layoutY="563.0" prefHeight="18.0" prefWidth="122.0" text="_____" textOverrun="CLIP" />
+      <Label fx:id="hintLabel" alignment="CENTER" layoutX="442.0" layoutY="514.0" prefHeight="18.0" prefWidth="114.0" text="_________" />
+      <Button fx:id="hintButton" layoutX="593.0" layoutY="510.0" mnemonicParsing="false" onAction="#hint1" text="Hint" />
+      <RadioButton fx:id="all" layoutX="474.0" layoutY="22.0" mnemonicParsing="false" onAction="#changeSetting" text="all">
+         <font>
+            <Font size="10.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="setting" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="hof" layoutX="474.0" layoutY="38.0" mnemonicParsing="false" onAction="#changeSetting" text="hof" toggleGroup="$setting">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="awards" layoutX="474.0" layoutY="54.0" mnemonicParsing="false" onAction="#changeSetting" text="awards" toggleGroup="$setting">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="_1920s" layoutX="474.0" layoutY="69.0" mnemonicParsing="false" onAction="#changeSetting" text="1920s" toggleGroup="$setting">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="_1930s" layoutX="474.0" layoutY="84.0" mnemonicParsing="false" onAction="#changeSetting" text="1930s" toggleGroup="$setting">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="_1940s" layoutX="474.0" layoutY="99.0" mnemonicParsing="false" onAction="#changeSetting" text="1940s" toggleGroup="$setting">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="_1950s" layoutX="474.0" layoutY="114.0" mnemonicParsing="false" onAction="#changeSetting" text="1950s" toggleGroup="$setting">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="_1960s" layoutX="474.0" layoutY="129.0" mnemonicParsing="false" onAction="#changeSetting" text="1960s" toggleGroup="$setting">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="_1970s" layoutX="474.0" layoutY="144.0" mnemonicParsing="false" onAction="#changeSetting" text="1970s" toggleGroup="$setting">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="_1980s" layoutX="474.0" layoutY="159.0" mnemonicParsing="false" onAction="#changeSetting" text="1980s" toggleGroup="$setting">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="_1990s" layoutX="474.0" layoutY="174.0" mnemonicParsing="false" onAction="#changeSetting" text="1990s" toggleGroup="$setting">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="_2000s" layoutX="474.0" layoutY="189.0" mnemonicParsing="false" onAction="#changeSetting" text="2000s" toggleGroup="$setting">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="_2010s" layoutX="474.0" layoutY="204.0" mnemonicParsing="false" onAction="#changeSetting" text="2010s" toggleGroup="$setting">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </RadioButton>
+   </children>
+</AnchorPane>
