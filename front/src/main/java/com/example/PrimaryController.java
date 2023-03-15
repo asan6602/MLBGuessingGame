@@ -146,6 +146,8 @@ public class PrimaryController {
         this.name = data.get(0).get(0).get(0).toLowerCase() + " " + data.get(0).get(0).get(1).toLowerCase();
         hint = g.nameAsSpace(name);
         hintLabel.setText(hint);
+
+        resultLabel.setText("");
         
 
         bview.getItems().clear();
