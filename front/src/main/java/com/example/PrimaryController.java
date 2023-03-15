@@ -137,6 +137,7 @@ public class PrimaryController {
 
     @FXML
     void play(ActionEvent event) {
+        resultLabel.setText(" ");
         ArrayList<ArrayList<ArrayList<String>>> data = g.rawData();
 
         System.out.println(data);
@@ -147,7 +148,7 @@ public class PrimaryController {
         hint = g.nameAsSpace(name);
         hintLabel.setText(hint);
 
-        resultLabel.setText("");
+
         
 
         bview.getItems().clear();
