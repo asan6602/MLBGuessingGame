@@ -1,6 +1,8 @@
 # MLBGuessingGame
 main is located in front\src\main\java\com\example\App.java
 
+https://youtu.be/7f_X7o0f__8
+
 -javafx application with connection to postgresSQL
 
 -strategy pattern
