@@ -30,8 +30,8 @@
       </TableView>
       <TableView fx:id="pview" layoutX="530.0" prefHeight="510.0" prefWidth="467.0">
         <columns>
+         <TableColumn fx:id="pyear" prefWidth="50.0" text="Year" />
           <TableColumn fx:id="pteam" prefWidth="50.0" text="Team" />
-          <TableColumn fx:id="pyear" prefWidth="50.0" text="Year" />
             <TableColumn fx:id="pg" prefWidth="50.0" text="G" />
             <TableColumn fx:id="pw" prefWidth="50.0" text="W" />
             <TableColumn fx:id="pl" prefWidth="50.0" text="L" />

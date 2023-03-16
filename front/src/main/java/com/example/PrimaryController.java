@@ -138,6 +138,7 @@ public class PrimaryController {
     @FXML
     void play(ActionEvent event) {
         resultLabel.setText(" ");
+        enterText.clear();
         ArrayList<ArrayList<ArrayList<String>>> data = g.rawData();
 
         System.out.println(data);
