@@ -11,4 +11,6 @@ https://youtu.be/7f_X7o0f__8
 
 
 ![image](https://user-images.githubusercontent.com/110870409/225184219-32023dfd-cb7b-450b-82ba-3f9df247121a.png)
-[MLB Guessing Game Design Document-1.pdf](https://github.com/asan6602/MLBGuessingGame/files/10984670/MLB.Guessing.Game.Design.Document-1.pdf)
+
+
+[MLB Guessing Game Design Document-2.pdf](https://github.com/asan6602/MLBGuessingGame/files/11005998/MLB.Guessing.Game.Design.Document-2.pdf)
